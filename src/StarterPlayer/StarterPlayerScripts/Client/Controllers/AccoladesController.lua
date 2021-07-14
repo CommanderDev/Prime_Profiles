@@ -33,8 +33,6 @@ function AccoladesController:AddAccolade(accoladeName: string)
     Knit.selectedPlayerData.Accolades[accoladeName] += 1
     self:UpdateOneAccolade(accoladeName)
     AccoladesService:AddAccolade(Knit.selectedPlayerId, accoladeName)
-    Knit.selectedPlayerData = PlayerService:GetPlayerData(Knit.selectedPlayerId)
-    self:UpdateOneAccolade(accoladeName)
 end
 
 function AccoladesController:SubtractAccolade(accoladeName: string)
@@ -42,8 +40,6 @@ function AccoladesController:SubtractAccolade(accoladeName: string)
     Knit.selectedPlayerData.Accolades[accoladeName] -= 1
     self:UpdateOneAccolade(accoladeName)
     AccoladesService:SubtractAccolade(Knit.selectedPlayerId, accoladeName)
-    Knit.selectedPlayerData = PlayerService:GetPlayerData(Knit.selectedPlayerId)
-    self:UpdateOneAccolade(accoladeName)
 end
 
 --Only used when the client is loaded. MEant to load all accolades then update them to the player's data.
