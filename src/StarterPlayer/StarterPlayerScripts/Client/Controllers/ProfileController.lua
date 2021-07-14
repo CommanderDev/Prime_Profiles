@@ -41,7 +41,7 @@ function ProfileController:KnitInit()
     SearchBox.FocusLost:Connect(function()
         self:EnableLoadScreen()
         local success, result = pcall(function()
-            if tonumber(SearchBox.Text) then
+            if tonumber(SearchBox.Text) and PlayerService:PlayerIsInPL(tonumber(SearchBox.Text)) then
                 return tonumber(SearchBox.Text)
             end
             return game.Players:GetUserIdFromNameAsync(SearchBox.Text)
