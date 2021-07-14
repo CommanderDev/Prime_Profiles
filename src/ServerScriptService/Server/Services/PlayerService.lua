@@ -73,7 +73,7 @@ function PlayerService:GetPlayerData(playerId: number)
     :andThen(function(result)
         Knit.playerDataCache[tostring(playerId)] = result
     end)
-    
+
     repeat wait() until Knit.playerDataCache[tostring(playerId)]
     return Knit.playerDataCache[tostring(playerId)]
 end
