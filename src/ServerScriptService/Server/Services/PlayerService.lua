@@ -44,6 +44,7 @@ function PlayerService:GetPlayerData(playerId: number)
             break
         end
     end
+
     if not isInPrimeLegion then 
         return
     end
@@ -64,12 +65,15 @@ function PlayerService:GetPlayerData(playerId: number)
             reject(result)
         end 
     end)
+
     :Catch(function(err)
        warn(err) 
     end)
+
     :andThen(function(result)
         Knit.playerDataCache[tostring(playerId)] = result
     end)
+    
     repeat wait() until Knit.playerDataCache[tostring(playerId)]
     return Knit.playerDataCache[tostring(playerId)]
 end
