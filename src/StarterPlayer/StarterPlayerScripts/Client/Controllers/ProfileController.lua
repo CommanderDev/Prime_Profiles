@@ -47,7 +47,6 @@ function ProfileController:KnitInit()
             return game.Players:GetUserIdFromNameAsync(SearchBox.Text)
         end)
         local playerId = result
-        print(playerId)
         if not success then 
             warn(result)
             self:DisableLoadScreen()
