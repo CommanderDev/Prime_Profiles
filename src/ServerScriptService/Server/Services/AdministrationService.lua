@@ -18,8 +18,4 @@ function AdministrationService:PlayerIsAdmin(playerObject: Player): boolean
     end
 end
 
-function AdministrationService:KnitInit()
-
-end
-
 return AdministrationService
